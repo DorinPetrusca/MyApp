@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Toti oamenii</title>
+</head>
+<body>
+<div th:each="person : ${people}">
+    <a th:href="@{/people/{id}(id=${person.getId()})}"
+       th:text="${person.getFullName()+', '+person.getYearOfBirth()+', '+person.getEmail()}">user</a>
+</div>
+<br/>
+<hr/>
+<a href="/people/new">Creati o persoana noua</a>
+<br/>
+<a href="/cars">Accesati pagina cu automobile</a>
+</body>
+</html>
